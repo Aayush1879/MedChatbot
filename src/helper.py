@@ -42,14 +42,13 @@ def text_split(minimal_docs):
 def download_embeddings():
     model_name = "pritamdeka/S-PubMedBert-MS-MARCO"
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"✅ Using device: {device}")
 
     embeddings = HuggingFaceEmbeddings(
         model_name=model_name,
         model_kwargs={"device": device},
         encode_kwargs={"normalize_embeddings": True},
     )
-    print(f"✅ Embeddings loaded: {model_name}")
+    print(f"Embeddings loaded: {model_name}")
     return embeddings
 
 
